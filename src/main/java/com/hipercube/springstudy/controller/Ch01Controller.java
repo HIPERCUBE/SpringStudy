@@ -39,8 +39,8 @@ public class Ch01Controller {
         return "ch01/content";
     }
 
-    @RequestMapping("/ch01/ppt")
-    public String ppt() {
-        return "ch01/ppt";
-    }
+//    @RequestMapping("/ch01/ppt")
+//    public String ppt() {
+//        return "ch01/ppt";
+//    }
 }
