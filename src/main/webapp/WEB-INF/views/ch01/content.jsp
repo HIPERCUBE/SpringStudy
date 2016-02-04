@@ -19,7 +19,6 @@
 <div id="header">
     <h3>개발 환경 구축</h3>
 </div>
-
 <div id="content">
     <div class="sector">
         <div class="sector_title">
