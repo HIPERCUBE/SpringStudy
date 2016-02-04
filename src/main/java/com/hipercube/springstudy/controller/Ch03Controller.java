@@ -1,6 +1,6 @@
 package com.hipercube.springstudy.controller;
 
-import com.hipercube.springstudy.dao.Ch03Dto;
+import com.hipercube.springstudy.dto.Ch03Dto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;

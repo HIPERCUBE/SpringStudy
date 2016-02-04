@@ -1,4 +1,4 @@
-package com.hipercube.springstudy.dao;
+package com.hipercube.springstudy.dto;
 
 import java.util.Date;
 

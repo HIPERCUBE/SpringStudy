@@ -1,6 +1,6 @@
 package com.hipercube.springstudy.controller;
 
-import com.hipercube.springstudy.dao.Ch05Board;
+import com.hipercube.springstudy.dto.Ch05Board;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
