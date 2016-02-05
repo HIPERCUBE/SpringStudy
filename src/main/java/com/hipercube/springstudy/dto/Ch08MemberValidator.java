@@ -30,7 +30,7 @@ import org.springframework.validation.Validator;
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class Ch08MemverValidator implements Validator {
+public class Ch08MemberValidator implements Validator {
     @Override
     public boolean supports(Class<?> aClass) {
         return Ch08Member.class.isAssignableFrom(aClass);
