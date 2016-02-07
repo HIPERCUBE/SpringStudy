@@ -57,7 +57,7 @@ public class Ch10Controller {
     }
 
     @RequestMapping("/ch10/ppt")
-    public String ppt() {w
+    public String ppt() {
         return "ch10/ppt";
     }
 

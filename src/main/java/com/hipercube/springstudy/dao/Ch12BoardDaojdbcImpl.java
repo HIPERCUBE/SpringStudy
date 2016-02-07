@@ -1,6 +1,6 @@
 package com.hipercube.springstudy.dao;
 
-import com.hipercube.springstudy.dto.Ch11Board;
+import com.hipercube.springstudy.dto.Ch12Board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -37,38 +37,40 @@ import java.util.List;
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-@Component
-public class Ch11BoardDao {
+//@Component
+public class Ch12BoardDaojdbcImpl implements Ch12BoardDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<Ch11Board> selectAll() {
+    @Override
+    public List<Ch12Board> selectAll() {
         String sql = "select * from board";
-        return jdbcTemplate.query(sql, new RowMapper<Ch11Board>() {
+        return jdbcTemplate.query(sql, new RowMapper<Ch12Board>() {
             @Override
-            public Ch11Board mapRow(ResultSet rs, int i) throws SQLException {
-                Ch11Board board = new Ch11Board();
-                board.setBno(rs.getInt("bno"));
-                board.setBtitle(rs.getString("btitle"));
-                board.setBcontent(rs.getString("bcontent"));
-                board.setBdate(rs.getDate("bdate"));
-                board.setMid(rs.getString("mid"));
+            public Ch12Board mapRow(ResultSet resultSet, int i) throws SQLException {
+                Ch12Board board = new Ch12Board();
+                board.setBno(resultSet.getInt("bno"));
+                board.setBtitle(resultSet.getString("btitle"));
+                board.setBcontent(resultSet.getString("bcontent"));
+                board.setBdate(resultSet.getDate("bdate"));
+                board.setMid(resultSet.getString("mid"));
                 return board;
             }
         });
     }
 
-    public Ch11Board selectByBno(int bno) {
-        String sql = "select * from board where bno=?";
-        List<Ch11Board> list = jdbcTemplate.query(sql, new Object[]{bno}, new RowMapper<Ch11Board>() {
+    @Override
+    public Ch12Board selectByBno(int bno) {
+        String sql = "select * from where bno=?";
+        List<Ch12Board> list = jdbcTemplate.query(sql, new Object[]{bno}, new RowMapper<Ch12Board>() {
             @Override
-            public Ch11Board mapRow(ResultSet rs, int i) throws SQLException {
-                Ch11Board board = new Ch11Board();
-                board.setBno(rs.getInt("bno"));
-                board.setBtitle(rs.getString("btitle"));
-                board.setBcontent(rs.getString("bcontent"));
-                board.setBdate(rs.getDate("bdate"));
-                board.setMid(rs.getString("mid"));
+            public Ch12Board mapRow(ResultSet resultSet, int i) throws SQLException {
+                Ch12Board board = new Ch12Board();
+                board.setBno(resultSet.getInt("bno"));
+                board.setBtitle(resultSet.getString("btitle"));
+                board.setBcontent(resultSet.getString("bcontent"));
+                board.setBdate(resultSet.getDate("bdate"));
+                board.setMid(resultSet.getString("mid"));
                 return board;
             }
         });
@@ -76,7 +78,8 @@ public class Ch11BoardDao {
         else return null;
     }
 
-    public Integer insert(final Ch11Board board) {
+    @Override
+    public Integer insert(final Ch12Board board) {
         final String sql = "insert into board (btitle, bcontent, bdate, mid) values(?, ?, sysdate, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
@@ -91,5 +94,17 @@ public class Ch11BoardDao {
         }, keyHolder);
         Integer bno = keyHolder.getKey().intValue();
         return bno;
+    }
+
+    @Override
+    public int update(Ch12Board board) {
+        String sql = "update board set btitle=?, bcontent=? where bno=?";
+        return jdbcTemplate.update(sql, board.getBtitle(), board.getBcontent(), board.getBno());
+    }
+
+    @Override
+    public int delete(int bno) {
+        String sql = "delete from board where bno=?";
+        return jdbcTemplate.update(sql, bno);
     }
 }
