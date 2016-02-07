@@ -38,7 +38,7 @@ import java.util.List;
  */
 
 //@Component
-public class Ch12BoardDaojdbcImpl implements Ch12BoardDao {
+public class Ch12BoardDaoJdbcImpl implements Ch12BoardDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
