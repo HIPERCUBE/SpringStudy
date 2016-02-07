@@ -1,6 +1,7 @@
 package com.hipercube.springstudy.service;
 
 import com.hipercube.springstudy.dto.Ch10Board;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -31,6 +32,7 @@ import java.util.List;
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+@Component
 public class Ch10Service2 {
     public List<Ch10Board> getBoardList() {
         List<Ch10Board> boardList = Arrays.asList(
