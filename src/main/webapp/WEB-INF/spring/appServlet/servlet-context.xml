@@ -44,4 +44,10 @@
     <!-- File Upload -->
     <beans:bean id="multipartResolver"
                 class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+    <!-- Dependency Injection -->
+    <beans:bean id="ch10Controller" class="com.hipercube.springstudy.controller.Ch10Controller">
+        <beans:property name="ch10Service1" ref="ch10Service1"/>
+    </beans:bean>
+    <beans:bean id="ch10Service1" class="com.hipercube.springstudy.service.Ch10Service1"/>
 </beans:beans>

@@ -44,6 +44,7 @@ public class Ch10Controller {
     private Ch10Service1 ch10Service1;
 
     public void setCh10Service1(Ch10Service1 ch10Service1) {
+        logger.info("setCh10Service1()");
         this.ch10Service1 = ch10Service1;
     }
 
