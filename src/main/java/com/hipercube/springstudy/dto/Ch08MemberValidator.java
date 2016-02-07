@@ -1,6 +1,5 @@
 package com.hipercube.springstudy.dto;
 
-import com.sun.xml.internal.ws.assembler.jaxws.ValidationTubeFactory;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
