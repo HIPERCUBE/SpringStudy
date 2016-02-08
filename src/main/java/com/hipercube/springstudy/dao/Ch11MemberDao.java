@@ -47,7 +47,7 @@ public class Ch11MemberDao {
                 Ch11Member member = new Ch11Member();
                 member.setMid(resultSet.getString("mid"));
                 member.setMname(resultSet.getString("mname"));
-                member.setMpassowrd(resultSet.getString("mpassword"));
+                member.setMpassword(resultSet.getString("mpassword"));
                 return member;
             }
         });
@@ -56,7 +56,7 @@ public class Ch11MemberDao {
     }
 
     public String insert(Ch11Member member) {
-        int rows = jdbcTemplate.update("insert into member values (?, ?, ?)", member.getMid(), member.getMname(), member.getMpassowrd());
+        int rows = jdbcTemplate.update("insert into member values (?, ?, ?)", member.getMid(), member.getMname(), member.getMpassword());
         if (rows == 1) return member.getMid();
         else return null;
     }

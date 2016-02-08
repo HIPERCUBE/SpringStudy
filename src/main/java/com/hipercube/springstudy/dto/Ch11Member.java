@@ -28,7 +28,7 @@ package com.hipercube.springstudy.dto;
 public class Ch11Member {
     private String mid;
     private String mname;
-    private String mpassowrd;
+    private String mpassword;
 
     public String getMid() {
         return mid;
@@ -46,11 +46,11 @@ public class Ch11Member {
         this.mname = mname;
     }
 
-    public String getMpassowrd() {
-        return mpassowrd;
+    public String getMpassword() {
+        return mpassword;
     }
 
-    public void setMpassowrd(String mpassowrd) {
-        this.mpassowrd = mpassowrd;
+    public void setMpassword(String mpassword) {
+        this.mpassword = mpassword;
     }
 }

@@ -73,6 +73,21 @@ public class Ch11Controller {
         writer.close();
     }
 
+    @RequestMapping(value = "/ch11/login", method = RequestMethod.POST)
+    public void login(Ch11Member member, HttpServletResponse response, HttpSession session) throws Exception {
+        String result = ch11Service.login(member.getMid(), member.getMpassword());
+        if (result.equals("success")) {
+            session.setAttribute("sessionMid", member.getMid());
+        }
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        response.setContentType("application/json; charset=UTF-8");
+        PrintWriter writer = response.getWriter();
+        writer.write(jsonObject.toString());
+        writer.flush();
+        writer.close();
+    }
+
     @RequestMapping(value = "/ch11/logout")
     public void logout(HttpServletResponse response, HttpSession session) throws Exception {
         session.removeAttribute("sessionMid");

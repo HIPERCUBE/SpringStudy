@@ -49,7 +49,7 @@ public class Ch11Service {
     public String login(String mid, String mpassword) {
         Ch11Member member = memberDao.selectByMid(mid);
         if (member != null) {
-            if (member.getMpassowrd().equals(mpassword)) {
+            if (member.getMpassword().equals(mpassword)) {
                 return "success";
             } else {
                 return "fail-password";
