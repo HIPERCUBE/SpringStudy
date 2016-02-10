@@ -2,6 +2,7 @@ package com.hipercube.springstudy.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+@Controller
 public class Ch14Controller {
     private static final Logger logger = LoggerFactory.getLogger(Ch14Controller.class);
 
