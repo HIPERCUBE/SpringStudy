@@ -71,8 +71,8 @@ public class Ch13Controller {
     }
 
     @RequestMapping("/ch13/accountTransfer")
-    public String accountTransfer(int fromAno, int toAno, int amout) {
-        ch13Service.transfer(fromAno, toAno, amout);
+    public String accountTransfer(int fromAno, int toAno, int amount) {
+        ch13Service.transfer(fromAno, toAno, amount);
         return "redirect:/ch13/content";
     }
 }
