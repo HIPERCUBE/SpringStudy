@@ -53,7 +53,7 @@
 
     <!-- WebSocket Handler -->
     <websocket:handlers>
-        <websocket:mapping path="echoHandler" handler="/websocket/echo"/>
-        <websocket:mapping path="chatHandler" handler="/websocket/chat"/>
+        <websocket:mapping handler="echoHandler" path="/websocket/echo"/>
+        <websocket:mapping handler="chatHandler" path="/websocket/chat"/>
     </websocket:handlers>
 </beans:beans>
