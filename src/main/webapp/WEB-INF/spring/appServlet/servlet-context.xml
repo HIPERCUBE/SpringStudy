@@ -50,4 +50,10 @@
         <beans:property name="ch10Service1" ref="ch10Service1"/>
     </beans:bean>
     <beans:bean id="ch10Service1" class="com.hipercube.springstudy.service.Ch10Service1"/>
+
+    <!-- WebSocket Handler -->
+    <websocket:handlers>
+        <websocket:mapping path="echoHandler" handler="/websocket/echo"/>
+        <websocket:mapping path="chatHandler" handler="/websocket/chat"/>
+    </websocket:handlers>
 </beans:beans>
