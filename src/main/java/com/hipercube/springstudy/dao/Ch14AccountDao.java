@@ -73,7 +73,7 @@ public class Ch14AccountDao {
     }
 
     public Integer insert(final Ch14Account account) {
-        final String sql = "insert into account (owner, balance) value (?, ?)";
+        final String sql = "insert into account (owner, balance) values (?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
